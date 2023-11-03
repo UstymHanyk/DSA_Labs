@@ -45,8 +45,6 @@ if __name__ == "__main__":
         start_position = tuple(map(int, file.readline().strip().split(",")))
         destination_position = tuple(map(int, file.readline().strip().split(",")))
 
-    print(start_position)
-    print(destination_position)
     shortest_path = find_shortest_path(board_size, start_position, destination_position)
 
     with open(output_file, "w") as file:
