@@ -37,8 +37,8 @@ def find_shortest_path(board_size, start, destination):
 
 
 if __name__ == "__main__":
-    input_file = "input.txt"
-    output_file = "output.txt"
+    input_file = "../test/input.txt"
+    output_file = "../test/output.txt"
 
     with open(input_file, "r") as file:
         board_size = int(file.readline().strip())
