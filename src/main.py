@@ -3,7 +3,8 @@ def read_input(file_name):
         with open(file_name, "r") as file:
             first_line = file.readline().split()
             if not first_line:
-                return None
+                print("File was empty.")
+                raise IOError
         with open(file_name, "r") as file:
             first_line = file.readline().split()
             N = int(first_line[0])  # Number of employees
