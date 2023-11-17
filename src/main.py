@@ -5,8 +5,6 @@ def read_input(file_name):
             if not first_line:
                 print("File was empty.")
                 raise IOError
-        with open(file_name, "r") as file:
-            first_line = file.readline().split()
             N = int(first_line[0])  # Number of employees
             B = int(first_line[1])  # Number of beers
             preferences = []
