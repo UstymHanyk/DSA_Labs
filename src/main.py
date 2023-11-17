@@ -27,9 +27,8 @@ def write_output(file_name, num_beers):
 
 
 def find_min_beer_coverage(N, B, preferences):
-    elements = set(range(B))
     set_cover = []
-    uncovered = elements.copy()
+    uncovered = set(range(B))
 
     while uncovered:
         best_subset = set()
