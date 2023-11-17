@@ -1,17 +1,25 @@
 def read_input(file_name):
-    with open(file_name, "r") as file:
-        first_line = file.readline().split()
-        N = int(first_line[0])  # Number of employees
-        B = int(first_line[1])  # Number of beers
-        preferences = []
-        beer_preferences = file.readline().strip().split()
-        for beer_preference in beer_preferences:
-            preference = []
-            for i in range(B):
-                if beer_preference[i] == "Y":
-                    preference.append(i)
-            preferences.append(preference)
-    return N, B, preferences
+    try:
+        with open(file_name, "r") as file:
+            first_line = file.readline().split()
+            if not first_line:
+                return None
+        with open(file_name, "r") as file:
+            first_line = file.readline().split()
+            N = int(first_line[0])  # Number of employees
+            B = int(first_line[1])  # Number of beers
+            preferences = []
+            beer_preferences = file.readline().strip().split()
+            for beer_preference in beer_preferences:
+                preference = []
+                for i in range(B):
+                    if beer_preference[i] == "Y":
+                        preference.append(i)
+                preferences.append(preference)
+        return N, B, preferences
+    except FileNotFoundError:
+        print("File not found or cannot be opened.")
+        return None
 
 
 def write_output(file_name, num_beers):
